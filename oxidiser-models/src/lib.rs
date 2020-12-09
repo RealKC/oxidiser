@@ -151,7 +151,8 @@ mod test {
         let _enter_world: Packet = serde_json::from_str(r#"{"type": "enter-world"}"#).unwrap();
 
         let ping = serde_json::from_str::<Packet>(r#"{"type": "ping", "result": "bar"}"#);
-        assert!(ping.is_err());
+
+        assert!(ping.is_ok());
     }
 
     #[test]
